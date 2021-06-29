@@ -1,0 +1,2 @@
+from ussd import *
+welcome()

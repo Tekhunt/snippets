@@ -37,13 +37,13 @@ class Atm_operations:
         card_date = datetime.date(card_expiry_year, card_expiry_month, card_expiry_day)
         if current_date < card_date:
             card_pin = input('Input your card pin: ')
-            if card_pin[0] == '4' and len(card_pin) == 5:
+            if card_pin[0] == '4' and len(card_pin) == 19:
                 print('Your Verve card is valid')
                 self.validate_password()
-            elif card_pin[0] == '4' and len(card_pin) == 4:
+            elif card_pin[0] == '4' and len(card_pin) == 16:
                 print('Your Visa card is valid')
                 self.validate_password()
-            elif card_pin[0] == '5' and len(card_pin) == 16:
+            elif card_pin[0] == '5' and len(card_pin) == 14:
                 print('Your Visa card is valid')
                 self.validate_password()
 
@@ -57,7 +57,8 @@ class Atm_operations:
         else:
             sys.exit('Sorry your card has expired!')
         
-
+    # def checkBalance(self):
+    #     return self.balance - withdrawal_amount 
     def operation_type(self):
         import time
         print('Select 1 to check balance \n')
@@ -69,7 +70,7 @@ class Atm_operations:
             print(f'Your account balance is: {self.balance-withdrawal_amount}')
             print('Select Yes to performanother transaction or No to quit')
             transaction_prompt = input('Yes/No')
-            if transaction_prompt.casefold() == 'Yes':
+            if transaction_prompt.casefold() == 'yes':
                 self.operation_type()
             else:
                 print('Thank you, please take your card!')
