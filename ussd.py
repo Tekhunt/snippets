@@ -85,7 +85,7 @@ def transfer_airtime():
         transfer_amount = int(input('Please type amount: '))
     if ((recipient_number[:4] == '+234' or len(recipient_number) == 14) or (len('+234' + str(recipient_number[1:])) == 14) and [i for i in ['080', '081', '070', '090', '091'] if i == recipient_number[0:3]]) and transfer_amount <= airtime_balance:
         print(f'{transfer_amount} has been transfered to {recipient_number}') 
-        airtime_balance =  initial_amount + purchase_amount - transfer_amount
+        #airtime_balance =  initial_amount + purchase_amount - transfer_amount
         # additional code
         loop4 = input('Select 6 to perform another or press any other key to exit: ')
         if loop4 == '6':
